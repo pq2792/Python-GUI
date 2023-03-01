@@ -1,0 +1,54 @@
+from tkinter import *
+root = Tk()
+
+def getvals():
+    print("It Works!")
+    
+root.geometry("655x455")
+# Heading
+Label(root,text="Welcome to 123 Travels ",font="comicsansms 13 bold",pady=10).grid(row=0,column=3)
+
+# Text for our form
+name=Label(root,text="Name")
+pno=Label(root,text="Phone")
+gender=Label(root,text="Gender")
+emergency=Label(root,text="Emergency Contact")
+payment=Label(root,text="Payment Mode")
+
+#Pack text for our form
+name.grid(row=1)
+pno.grid(row= 2)
+gender.grid(row= 3)
+emergency.grid(row=4)
+payment.grid(row= 5)
+
+# tkinter variable for storing entries
+namevalue=StringVar()
+pnovalue=StringVar()
+gendervalue=StringVar()
+emergencyvalue=StringVar()
+paymentvalue=StringVar()
+foodservicevalue=IntVar()
+
+#Entries for our form
+nameentry=Entry(root,textvariable= namevalue)
+pnoentry=Entry(root,textvariable=pnovalue)
+genderentry=Entry(root,textvariable=gendervalue)
+emergencyentry=Entry(root,textvariable=emergencyvalue)
+paymententry=Entry(root,textvariable=paymentvalue)
+
+# Packing the entries
+nameentry.grid(row=1,column=3)
+pnoentry.grid(row=2,column=3)
+genderentry.grid(row=3,column=3)
+emergencyentry.grid(row=4,column=3)
+paymententry.grid(row=5,column=3)
+
+# Checkbox&Packing
+foodservice = Checkbutton(text="Want to prebook your meals?",variable=foodservicevalue)
+foodservice.grid(row=6,column=3)
+
+# Button & Packing it as a command
+
+Button(text="Submit to 123 travels",command=getvals).grid(row=7,column=3)
+root.mainloop()

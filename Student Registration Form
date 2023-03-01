@@ -1,0 +1,166 @@
+from tkinter import *
+from tkinter import ttk
+import mysql.connector
+
+mydb = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="23217",
+    database="test",
+    auth_plugin="mysql_native_password"
+)
+
+mycursor = mydb.cursor()
+
+root=Tk()
+root.config(bg="purple")
+root.geometry("755x655")
+
+Label(root,text="STUDENT REGISTRATION FORM",fg="purple",bg="white",font="timesnewroman 19 underline",padx=200,pady=10).pack(anchor=CENTER)
+Label(root,text="FIRST NAME",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=60)
+Label(root,text="LAST NAME",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=90)
+lable=Label(root,text="DATE OF BIRTH",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=120)
+mylist=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+mylist1=["Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"]
+mylist2=[2001,2002,2003,2004,2005,2006,2007,2008,2009,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,2020,2021,2022,2023]
+entry=ttk.Combobox(root,values=mylist,width=5)
+entry.set("Day")
+entry.place(x=130,y=120)
+entry_1=ttk.Combobox(root,values=mylist1,width=6)
+entry_1.set("Month")
+entry_1.place(x=185,y=120)
+entry_2=ttk.Combobox(root,values=mylist2,width=5)
+entry_2.set("Year")
+entry_2.place(x=245,y=120)
+Label(root,text="EMAIL ID",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=150)
+Label(root,text="MOBILE NUMBER",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=180)
+Label(root,text="GENDER",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=210)
+Label(root,text="ADDRESS",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=240)
+Label(root,text="CITY",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=270)
+Label(root,text="PIN CODE",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=300)
+Label(root,text="STATE",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=330)
+Label(root,text="COUNTRY",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=360)
+Label(root,text="HOBBIES",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=390)
+Label(root,text="QUALIFICATION",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=450)
+Label(root,text="Sl.No.",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=130,y=450)
+Label(root,text="Examination",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=170,y=450)
+Label(root,text="Board",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=300,y=450)
+Label(root,text="Percentage",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=415,y=450)
+Label(root,text="Year of Passing",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=540,y=450)
+Label(root,text="COURSES",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=570)
+Label(root,text="APPLIED FOR",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=20,y=590)
+
+
+Label(root,text="1",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=130,y=470)
+Label(root,text="2",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=130,y=490)
+Label(root,text="3",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=130,y=510)
+Label(root,text="4",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=130,y=530)
+
+Label(root,text="Class X",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=170,y=470)
+Label(root,text="Class XII",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=170,y=490)
+Label(root,text="Graduation",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=170,y=510)
+Label(root,text="Masters",fg="white",bg="purple",font="timesnewroman 9 bold").place(x=170,y=530)
+
+fnamevalue=StringVar()
+lnamevalue=StringVar()
+dobvar=StringVar()
+emailidvar=StringVar()
+mnovar=StringVar()
+gendervar=StringVar()
+addvar=StringVar()
+cityvar=StringVar()
+pinvar=StringVar()
+statevar=StringVar()
+convar=StringVar()
+hobvar1=StringVar()
+hobvar2=StringVar()
+hobvar3=StringVar()
+hobvar4=StringVar()
+hobvar5=StringVar()
+bdvar=StringVar()
+perval=StringVar()
+yopval=StringVar()
+bdvar1=StringVar()
+perval1=StringVar()
+yopval1=StringVar()
+bdvar2=StringVar()
+perval2=StringVar()
+yopval2=StringVar()
+bdvar3=StringVar()
+perval3=StringVar()
+yopval3=StringVar()
+cafval=StringVar()
+
+fnameentry=Entry(root,textvariable=fnamevalue).place(x=130,y=60)
+lnameentry=Entry(root,textvariable=lnamevalue).place(x=130,y=90)
+
+emailidentry=Entry(root,textvariable=emailidvar).place(x=130,y=150)
+mnoentry=Entry(root,textvariable=mnovar).place(x=130,y=180)
+
+genderentry=Radiobutton(root,text="Male",variable=gendervar,value=1).place(x=130,y=210)
+genderentry1=Radiobutton(root,text="Female",variable=gendervar,value=2).place(x=190,y=210)
+
+addentry=Entry(root,textvariable=addvar).place(x=130,y=240)
+
+cityentry=Entry(root,textvariable=cityvar).place(x=130,y=270)
+pinentry=Entry(root,textvariable=pinvar).place(x=130,y=300)
+stateentry=Entry(root,textvariable=statevar).place(x=130,y=330)
+conentry=Entry(root,textvariable=convar).place(x=130,y=360)
+
+hobentry1=Checkbutton(root,text="Drawing",variable=hobvar1,onvalue=1,offvalue=0,fg="white",bg="purple").place(x=130,y=390)
+hobentry2=Checkbutton(root,text="Singing",variable=hobvar2,onvalue=2,offvalue=0,fg="white",bg="purple").place(x=205,y=390)
+hobentry3=Checkbutton(root,text="Dancing",variable=hobvar3,onvalue=3,offvalue=0,fg="white",bg="purple").place(x=280,y=390)
+hobentry4=Checkbutton(root,text="Sketching",variable=hobvar4,onvalue=4,offvalue=0,fg="white",bg="purple").place(x=355,y=390)
+hobentry5=Checkbutton(root,text="Others ",variable=hobvar5,onvalue=5,offvalue=0,fg="white",bg="purple").place(x=130,y=420)
+
+bdentry1=Entry(root,textvariable=bdvar).place(x=265,y=470)
+bdentry2=Entry(root,textvariable=bdvar1).place(x=265,y=490)
+bdentry3=Entry(root,textvariable=bdvar2).place(x=265,y=510)
+bdentry4=Entry(root,textvariable=bdvar3).place(x=265,y=530)
+
+perentry1=Entry(root,textvariable=perval).place(x=395,y=470)
+perentry2=Entry(root,textvariable=perval1).place(x=395,y=490)
+perentry3=Entry(root,textvariable=perval2).place(x=395,y=510)
+perentry4=Entry(root,textvariable=perval3).place(x=395,y=530)
+
+yopentry1=Entry(root,textvariable=yopval).place(x=525,y=470)
+yopentry2=Entry(root,textvariable=yopval1).place(x=525,y=490)
+yopentry3=Entry(root,textvariable=yopval2).place(x=525,y=510)
+yopentry4=Entry(root,textvariable=yopval3).place(x=525,y=530)
+
+cafentry1=Radiobutton(root,text="BCA",variable=cafval,val=1).place(x=140,y=580)
+cafentry2=Radiobutton(root,text="B.Com",variable=cafval,val=2).place(x=190,y=580)
+cafentry3=Radiobutton(root,text="B.Sc",variable=cafval,val=3).place(x=250,y=580)
+cafentry4=Radiobutton(root,text="B.A",variable=cafval,val=4).place(x=290,y=580)
+
+Label(root,text="(max 30 characters a-z and A-Z)",fg="white",bg="purple",font="timesnewroman 9").place(x=255,y=60)
+Label(root,text="(max 30 characters a-z and A-Z)",fg="white",bg="purple",font="timesnewroman 9").place(x=255,y=90)
+Label(root,text="(10 digit number)",fg="white",bg="purple",font="timesnewroman 9").place(x=255,y=180)
+Label(root,text="(max 30 characters a-z and A-Z)",fg="white",bg="purple",font="timesnewroman 9").place(x=255,y=270)
+Label(root,text="(6 digit number)",fg="white",bg="purple",font="timesnewroman 9").place(x=255,y=300)
+Label(root,text="(max 30 characters a-z and A-Z)",fg="white",bg="purple",font="timesnewroman 9").place(x=255,y=330)
+Label(root,text="(10 char max)",fg="white",bg="purple",font='timesnewroman 9').place(x=285,y=550)
+Label(root,text="(upto 2 decimal)",fg="white",bg="purple",font='timesnewroman 9').place(x=410,y=550)
+
+# def insertIntoDB(fnamevalue):
+#     print(fnamevalue)
+
+def getvals():
+    print("Submitting form")
+    print(f"{fnamevalue.get(),lnamevalue.get(),dobvar.get(),emailidvar.get(),mnovar.get(),gendervar.get(),addvar.get(),cityvar.get(),pinvar.get(),statevar.get(),convar.get(),hobvar1.get(),hobvar2.get(),hobvar3.get(),hobvar4.get(),hobvar5.get(),bdvar.get(),perval.get(),yopval.get(),bdvar1.get(),perval1.get(),yopval1.get(),bdvar2.get(),perval2.get(),yopval2.get(),bdvar3.get(),perval3.get(),yopval3.get(),cafval.get()}")
+    stmt = "INSERT INTO USERS VALUES('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}''{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}')"\
+        .format(fnamevalue.get(),lnamevalue.get(),dobvar.get(),emailidvar.get(),mnovar.get(),gendervar.get(),addvar.get(),cityvar.get(),
+                pinvar.get(),statevar.get(),convar.get(),hobvar1.get(),hobvar2.get(),hobvar3.get(),hobvar4.get(),hobvar5.get(),bdvar.get(),perval.get(),
+                yopval.get(),bdvar1.get(),perval1.get(),yopval1.get(),bdvar2.get(),perval2.get(),yopval2.get(),bdvar3.get(),perval3.get(),yopval3.get(),
+                cafval.get())
+    mycursor.execute(stmt)
+    mydb.commit()
+
+    with open("records.txt","a") as f:
+        f.write(f"{fnamevalue.get(),lnamevalue.get(),dobvar.get(),emailidvar.get(),mnovar.get(),gendervar.get(),addvar.get(),cityvar.get(),pinvar.get(),statevar.get(),convar.get(),hobvar1.get(),hobvar2.get(),hobvar3.get(),hobvar4.get(),hobvar5.get(),bdvar.get(),perval.get(),yopval.get(),bdvar1.get(),perval1.get(),yopval1.get(),bdvar2.get(),perval2.get(),yopval2.get(),bdvar3.get(),perval3.get(),yopval3.get(),cafval.get()}\n")
+
+Button(root,text="Submit",command=getvals).place(x=320,y=620)
+Button(root,text="Reset").place(x=390,y=620)
+
+root.mainloop()
+

@@ -1,0 +1,39 @@
+from tkinter import *
+root = Tk()
+root.geometry("455x233")
+Label(root,text="Movie Booking id").grid(row=1)
+Label(root,text="Person Name:").grid(row=2)
+Label(root,text="Movie Name").grid(row=3)
+Label(root,text="Class").grid(row=4)
+Label(root,text="Time of Show").grid(row=4,column=4)
+
+movidvalue=StringVar()
+personnamevalue=StringVar()
+movnamevalue=StringVar()
+classvalue=StringVar()
+timeshowvalue=StringVar()
+
+
+movidentry=Entry(root,textvariable=movidvalue)
+personnameentry=Entry(root,textvariable=personnamevalue)
+movnameentry=Entry(root,textvariable=movnamevalue)
+classentry=Radiobutton(root,text="A",variable=classvalue,value=1)
+classentry1=Radiobutton(root,text="B",variable=classvalue,value=2)
+timeshowentry=Checkbutton(root,text="7.15 pm",variable=timeshowvalue,onvalue=1,offvalue=0)
+timeshowentry1=Checkbutton(root,text="9 am",variable=timeshowvalue,onvalue=2,offvalue=0)
+ticketsentry=Spinbox(root,from_=3,to=5)
+
+movidentry.grid(row=1,column=2)
+personnameentry.grid(row=2,column=2)
+movnameentry.grid(row=3,column=2)
+classentry.grid(row=4,column=2)
+classentry1.grid(row=4,column=3)
+timeshowentry.grid(row=4,column=5)
+timeshowentry1.grid(row=4,column=6)
+
+Button(root,text="Insert").grid(row=6,column=0)
+Button(root,text="Update").grid(row=6,column=3)
+Button(root,text="Delete").grid(row=7,column=0)
+Button(root,text="Select").grid(row=7,column=3)
+
+root.mainloop()

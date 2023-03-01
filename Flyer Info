@@ -1,0 +1,43 @@
+from tkinter import *
+root = Tk()
+root.geometry("555x533")
+Label(root,text="Bookingid").grid(row=1)
+Label(root,text="Passenger Name:").grid(row=2)
+Label(root,text="Flight").grid(row=3)
+Label(root,text="Source").grid(row=4)
+Label(root,text="Destination").grid(row=4,column=4)
+Label(root,text="Duration").grid(row=5)
+
+bookingidvalue=StringVar()
+passengernamevalue=StringVar()
+flightvalue=StringVar()
+sourcevalue=StringVar()
+destinationvalue=StringVar()
+
+bookingidentry=Entry(root,textvariable=bookingidvalue)
+passengernameentry=Entry(root,textvariable=passengernamevalue)
+flightentry=Entry(root,textvariable=flightvalue)
+sourcevalue1=Radiobutton(root,text="Delhi",variable=sourcevalue,value=1)
+sourcevalue2=Radiobutton(root,text="Mumbai",variable=sourcevalue,value=2)
+destinationvalue1=Radiobutton(root,text="Chennai",variable=destinationvalue,value=3)
+destinationvalue2=Radiobutton(root,text="Kolkata",variable=destinationvalue,value=4)
+durationentry=Spinbox(root,from_=1,to = 12)
+
+bookingidentry.grid(row=1,column=2)
+passengernameentry.grid(row=2,column=2)
+flightentry.grid(row=3,column=2)
+sourcevalue1.grid(row=4,column=2)
+sourcevalue2.grid(row=4,column=3)
+destinationvalue1.grid(row=4,column=5)
+destinationvalue2.grid(row=4,column=6)
+durationentry.grid(row=5,column=2)
+
+
+
+Button(root,text="Insert").grid(row=6,column=0)
+Button(root,text="Update").grid(row=6,column=3)
+Button(root,text="Delete").grid(row=7,column=0)
+Button(root,text="Select").grid(row=7,column=3)
+
+
+root.mainloop()

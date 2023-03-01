@@ -1,0 +1,34 @@
+from tkinter import *
+root=Tk()
+root.geometry("455x233")
+Label(root,text="Annual Rate:").grid(row=1)
+Label(root,text="Number of Payments:").grid(row=2)
+Label(root,text="Loan Principle:").grid(row=3)
+Label(root,text="Monthly Payment:").grid(row=4)
+Label(root,text="Remaining Loan").grid(row=5)
+
+arvalue=IntVar()
+noofpayvalue=IntVar()
+lpvalue=IntVar()
+mpvalue=IntVar()
+rlvalue=IntVar()
+
+arentry=Entry(root,textvariable=arvalue)
+noofpayentry=Entry(root,textvariable=noofpayvalue)
+lpentry=Entry(root,textvariable=lpvalue)
+mpentry=Entry(root,textvariable=mpvalue)
+rlentry=Entry(root,textvariable=rlvalue)
+
+arentry.grid(row=1,column=2)
+noofpayentry.grid(row=2,column=2)
+lpentry.grid(row=3,column=2)
+mpentry.grid(row=4,column=2)
+rlentry.grid(row=5,column=2)
+
+Button(root,text="Final Balance").grid(row=7)
+Button(root,text="Monthly Payment").grid(row=7,column=2)
+Button(root,text="Quit").grid(row=7,column=3)
+
+root.mainloop()
+
+
